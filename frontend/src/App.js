@@ -10,6 +10,8 @@ import "./App.css"; // Styles
 import ContactForm from "./Email";
 
 import Map    from './map/map';
+import IsoStandardsPage from "./pages/IsoStandardsPage";
+import Iso9001Page from "./pages/Iso9001Page";
 
 import CarouselSmall from "./CarouselSmall";
 
@@ -99,7 +101,11 @@ const  slideDataSmall = [<img src="image1.jpg" alt="Slide 1" className="carousel
   const certMenus = [
     {
       label: "Высшие стандарты ISO",
-      items: ["Сертификат ISO 9001","Сертификат ISO 14001","Сертификат ISO 27001","Сертификат ISO 37001","Сертификат ISO 37301","ISO 45001/OHSAS 18001","Сертификация ISO 42001:2023","Сертификат ISO 50001","Сертификация подрядчиков специализированных сооружений"],
+      link: "/iso-standards",
+      items: [
+        { label: "Сертификат ISO 9001", link: "/iso-9001" },
+        "Сертификат ISO 14001","Сертификат ISO 27001","Сертификат ISO 37001","Сертификат ISO 37301","ISO 45001/OHSAS 18001","Сертификация ISO 42001:2023","Сертификат ISO 50001","Сертификация подрядчиков специализированных сооружений"
+      ],
     },
     {
       label: "Сертификат SCC",
@@ -193,34 +199,37 @@ const  slideDataSmall = [<img src="image1.jpg" alt="Slide 1" className="carousel
 
             {certMenus.map((menu, idx) => (
               <li key={idx} style={{ listStyle: "none" }}>
-                <button
-                  onClick={() => toggleMenu(idx)}
-                  style={{
-                    background: "none",
-                    border: "none",
-                    cursor: "pointer",
-                    padding: "4px 0",
-                    textAlign: "left",
-                    width: "100%",
-                    fontSize: "14px",
-                    color: "#0066cc",
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                  }}
-                >
-                  {menu.label}
-                  <span style={{ fontSize: "10px", marginLeft: "4px" }}>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                  {menu.link ? (
+                    <Link to={menu.link} style={{ fontSize: "14px", color: "#0066cc", padding: "4px 0", flex: 1 }}>
+                      {menu.label}
+                    </Link>
+                  ) : (
+                    <span style={{ fontSize: "14px", color: "#0066cc", padding: "4px 0", flex: 1 }}>
+                      {menu.label}
+                    </span>
+                  )}
+                  <button
+                    onClick={() => toggleMenu(idx)}
+                    style={{ background: "none", border: "none", cursor: "pointer", fontSize: "10px", color: "#0066cc", padding: "4px 2px" }}
+                  >
                     {openMenu === idx ? "▲" : "▼"}
-                  </span>
-                </button>
+                  </button>
+                </div>
                 {openMenu === idx && (
                   <ul style={{ paddingLeft: "12px", margin: "4px 0", listStyle: "disc" }}>
-                    {menu.items.map((item, i) => (
-                      <li key={i} style={{ fontSize: "13px", padding: "2px 0", color: "#333" }}>
-                        {item}
-                      </li>
-                    ))}
+                    {menu.items.map((item, i) => {
+                      const label = typeof item === "object" ? item.label : item;
+                      const link  = typeof item === "object" ? item.link  : null;
+                      return (
+                        <li key={i} style={{ fontSize: "13px", padding: "2px 0" }}>
+                          {link
+                            ? <Link to={link} style={{ color: "#0066cc" }}>{label}</Link>
+                            : <span style={{ color: "#333" }}>{label}</span>
+                          }
+                        </li>
+                      );
+                    })}
                   </ul>
                 )}
               </li>
@@ -243,6 +252,8 @@ const  slideDataSmall = [<img src="image1.jpg" alt="Slide 1" className="carousel
             <Route path="/contact" element={<ContactForm />} />
 
             <Route path="/map" element={<Map />} />
+            <Route path="/iso-standards" element={<IsoStandardsPage />} />
+            <Route path="/iso-9001" element={<Iso9001Page />} />
 
           </Routes>
         </div>
