@@ -4,9 +4,6 @@ import { Routes, Route, Link } from "react-router-dom";
 import { generatePKCE } from "./pkce";
 
 import { useTranslation } from "react-i18next"; // Хук для перевода
-import DynamoDBTable from "./DynamoDBTable";
-import HowPeople from "./HowPeople";
-import LinkYouPage from "./linkYouPage";
 import YourAccount from "./YourAccount";
 import StepByStep from "./StepByStep";
 import "./App.css"; // Styles
@@ -99,7 +96,55 @@ const App = () => {
 // }
 const  slideDataSmall = [<img src="image1.jpg" alt="Slide 1" className="carousel-image" />, <a href="https://www.jackjones.com/pl-pl" target="_blank" rel="noopener noreferrer" key="1"><img src="jnj.jpg" alt="Slide jnj" className="carousel-image" /> </a>,  <img src="image2.jpg" alt="Slide 2" className="carousel-image" />,   <img src="image3.jpg" alt="Slide 3" className="carousel-image" />,   <img src="image4.jpg" alt="Slide 4" className="carousel-image" />]
 
+  const certMenus = [
+    {
+      label: "Высшие стандарты ISO",
+      items: ["Сертификат ISO 9001","Сертификат ISO 14001","Сертификат ISO 27001","Сертификат ISO 37001","Сертификат ISO 37301","ISO 45001/OHSAS 18001","Сертификация ISO 42001:2023","Сертификат ISO 50001","Сертификация подрядчиков специализированных сооружений"],
+    },
+    {
+      label: "Сертификат SCC",
+      items: ["Сертификат SCC для компаний","Сертификат SCC для сотрудников"],
+    },
+    {
+      label: "Сертификация ISO",
+      items: ["Сертификат ISO 1090","Сертификат ISO 17100","Сертификация ISO 18788:2015","Сертификат ISO 20700","Сертификат ISO 28000","Сертификат IATF 16949:2016","Сертификат ISO 3834","Сертификат ISO 22301","Сертификат ISO 29990","Стандарт PAX","Регламент Совета ЕС № 333/2011"],
+    },
+    {
+      label: "GDPR",
+      items: ["GDPR – основная информация","GDPR – подробная анкета","Интерес к GDPR"],
+    },
+    {
+      label: "ИТ-стандарты",
+      items: ["Сертификат ISO 20000","Сертификат ISO 27001","Аудит TISAX","Аудит кибербезопасности","Тестирование безопасности ИТ-систем"],
+    },
+    {
+      label: "Углеродный след",
+      items: ["Корпоративный сертификат углеродного следа","Проект компенсации","Общая информация","Проверка углеродного следа","Отчет о портале CDP","Сертификат EPD","Анализ LCA"],
+    },
+    {
+      label: "Экологические сертификаты",
+      items: ["Сертификат ISO 14001","Сертификация EMAS","Стандарт ISSC","Стандарты PEFC и FSC","Стандарты углеродного следа продукции","Сертификация Green Globe","Сертификация GSTC"],
+    },
+    {
+      label: "Пищевая промышленность",
+      items: ["Стандарты IFS, BRC, FSSC и ISO 22000","Стандарт HACCP","Стандарты GMP и FSA"],
+    },
+    {
+      label: "Здравоохранение и фармацевтика",
+      items: ["Сертификат ISO 13485","Сертификат ISO 15224","GDP – Надлежащая практика дистрибуции"],
+    },
+    {
+      label: "Социальная ответственность",
+      items: ["Сертификат ISO 26000","Сертификация SA8000","Аудит SEDEX / SMETA","Отчет по ESG"],
+    },
+    {
+      label: "Международные стандарты",
+      items: ["Сертификация CE","Сертификация EAC","Сертификация UKRSEPRO","Сертификация UKCA","BREEAM и LEED для зданий и сооружений"],
+    },
+  ];
 
+  const [openMenu, setOpenMenu] = useState(null);
+  const toggleMenu = (idx) => setOpenMenu(openMenu === idx ? null : idx);
 
   return (
     <div>
@@ -143,20 +188,43 @@ const  slideDataSmall = [<img src="image1.jpg" alt="Slide 1" className="carousel
               <Link to="/">{t('home')}</Link>
             </li>
             <li>
-              <Link to="/slots">{t('free_slots')}</Link>
-            </li>
-            <li>
-              <Link to="/howpeoples">{t('how_many_people')}</Link>
-            </li>
-            <li>
-              <Link to="/link_to_your_site">{t('link_to_your_site')}</Link>
-            </li>
-            <li>
-              <Link to="/slots">{t('Buy_ free_slots')}</Link>
-            </li>
-            <li>
               <Link to="/map">{t('map')}</Link>
             </li>
+
+            {certMenus.map((menu, idx) => (
+              <li key={idx} style={{ listStyle: "none" }}>
+                <button
+                  onClick={() => toggleMenu(idx)}
+                  style={{
+                    background: "none",
+                    border: "none",
+                    cursor: "pointer",
+                    padding: "4px 0",
+                    textAlign: "left",
+                    width: "100%",
+                    fontSize: "14px",
+                    color: "#0066cc",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
+                >
+                  {menu.label}
+                  <span style={{ fontSize: "10px", marginLeft: "4px" }}>
+                    {openMenu === idx ? "▲" : "▼"}
+                  </span>
+                </button>
+                {openMenu === idx && (
+                  <ul style={{ paddingLeft: "12px", margin: "4px 0", listStyle: "disc" }}>
+                    {menu.items.map((item, i) => (
+                      <li key={i} style={{ fontSize: "13px", padding: "2px 0", color: "#333" }}>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            ))}
 
             <li>
               <Link to="/contact">{t('Contact us')}</Link>
@@ -172,9 +240,6 @@ const  slideDataSmall = [<img src="image1.jpg" alt="Slide 1" className="carousel
           <Routes>
             {/* <Route path="/profile" element={<YourAccount />} /> */}
             <Route path="/" element={<StepByStep />} />
-            <Route path="/slots" element={<DynamoDBTable />} />
-            <Route path="/howpeoples" element={<HowPeople />} />
-            <Route path="/link_to_your_site" element={<LinkYouPage />} />   
             <Route path="/contact" element={<ContactForm />} />
 
             <Route path="/map" element={<Map />} />

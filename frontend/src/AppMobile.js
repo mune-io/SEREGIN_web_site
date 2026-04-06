@@ -1,13 +1,8 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import StepByStep from "./StepByStep";
-import DynamoDBTable from "./DynamoDBTable";
-import HowPeople from "./HowPeople";
-import LinkYouPage from "./linkYouPage";
 import ContactForm from "./Email";
 import Map from "./map/map";
-import EarnPage from "./pages/EarnPage";
-import InvestPage from "./pages/InvestPage";
 import Carousel from "./Carousel";
 import CarouselSmall from "./CarouselSmall";
 
@@ -65,13 +60,8 @@ const  slideDataSmall = [<img src="image1.jpg" alt="Slide 1" className="carousel
 
   const slideData = [
     <StepByStep key="step" />,
-    <DynamoDBTable key="slots" />,
-    <HowPeople key="how" />,
-    <LinkYouPage key="link" />,
     <ContactForm key="contact" />,
     <Map key="map" />,
-    <EarnPage key="earn" />,
-    <InvestPage key="invest" />
   ];
 
   return (
