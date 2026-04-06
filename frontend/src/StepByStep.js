@@ -1,34 +1,243 @@
-// import React, { useEffect, useState } from "react";
-// import { Link } from "react-router-dom";
-import { useTranslation } from 'react-i18next';
+import { useState } from "react";
 
 const StepByStep = () => {
-  const { t } = useTranslation();
+  const [formData, setFormData] = useState({
+    service: "CE certifikácia",
+    additionalServices: "",
+    name: "",
+    email: "",
+    phone: "",
+    question: "",
+  });
 
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // TODO: подключить отправку формы
+    alert("Форма отправлена!");
+  };
 
   return (
-    // <div style={{ display: "flex", flexDirection: "column", alignItems: "left" }}>
-<div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", marginLeft: "5%" }}>
+    <div style={{ maxWidth: "860px", padding: "20px", lineHeight: "1.7" }}>
 
+      {/* ── Заголовок ── */}
+      <h1>Сертификация CE</h1>
+      <p>
+        Сертификация CE (маркировка CE) является основным показателем полного
+        соответствия продукции законодательству Европейского союза.
+      </p>
 
+      {/* ── Что такое CE ── */}
+      <h2>Что такое сертификация CE?</h2>
+      <p>
+        Маркировка CE является основным показателем соответствия продукции
+        законодательству ЕС и обеспечивает свободное перемещение товаров на
+        европейском рынке, а также в Турции.
+      </p>
+      <p>
+        Это означает, что для торговли определёнными товарами в Европейской
+        экономической зоне или Турции наличие сертификата CE является
+        обязательным.
+      </p>
+      <p>
+        В настоящее время Европейская экономическая зона (ЕЭЗ) состоит из 27
+        государств-членов ЕС и 3 стран ЕФТА (Исландия, Норвегия и
+        Лихтенштейн).
+      </p>
 
-          <h1>{t("howToStart")}</h1>
-          <h4>
-          <h4>{t("steps.step1")}</h4>
-          <h4>{t("steps.step2")}</h4>
-          <h4>{t("steps.step3")}</h4>
-          <h5>- - - {t("steps.step3_1")}</h5>
-          <h4>{t("steps.step4")}</h4>
-          <h4>{t("steps.step5")}</h4>
-          <h4>{t("steps.step6")}</h4>  
-          {t("minRequirement")}
-          {/* <p>{t("viewsCount")}</p> */}
-          </h4>
+      <h3>В каких странах требуется сертификация CE:</h3>
+      <p>
+        Бельгия, Болгария, Кипр, Чехия, Дания, Эстония, Финляндия, Франция,
+        Греция, Нидерланды, Хорватия, Ирландия, Литва, Латвия, Люксембург,
+        Венгрия, Мальта, Германия, Польша, Португалия, Австрия, Румыния,
+        Словакия, Словения, Испания, Швеция, Италия и Турция.
+      </p>
 
+      {/* ── Маркировка CE ── */}
+      <h2>Маркировка CE</h2>
+      <p>
+        Однако не вся продукция должна иметь маркировку CE. Эта маркировка
+        требуется только для тех категорий продукции, которые подпадают под
+        действие конкретных директив ЕС.
+      </p>
+      <p>
+        Маркировка CE <strong>не требуется</strong> для таких продуктов, как
+        косметика, химикаты, продукты питания, фармацевтические препараты и т.д.
+      </p>
+
+      {/* ── Список продукции ── */}
+      <h2>Обзор продукции с маркировкой CE</h2>
+      <p>
+        Маркировка CE используется на широком спектре продукции, от
+        электрооборудования, игрушек и медицинских приборов до взрывчатых
+        веществ гражданского назначения. Ниже приведён полный список продукции,
+        требующей маркировки CE:
+      </p>
+      <ul>
+        <li>Активные имплантируемые медицинские устройства</li>
+        <li>Канатные дороги, предназначенные для перевозки людей</li>
+        <li>Устройства, потребляющие энергию (холодильник, телевизор, лампочка)</li>
+        <li>Электрические/электронные устройства (электромагнитная совместимость)</li>
+        <li>Оборудование и системы защиты для потенциально взрывоопасных сред</li>
+        <li>Взрывчатые вещества для гражданского использования и пиротехника</li>
+        <li>Водонагревательные котлы</li>
+        <li>Устройства, работающие на газообразном топливе</li>
+        <li>Медицинские изделия для диагностики in vitro</li>
+        <li>Лифты</li>
+        <li>Строительные материалы</li>
+        <li>Машины</li>
+        <li>Низковольтные устройства</li>
+        <li>Измерительное оборудование</li>
+        <li>Медицинские устройства</li>
+        <li>Оборудование, связанное с шумовым загрязнением окружающей среды</li>
+        <li>Неавтоматические весы</li>
+        <li>Средства индивидуальной защиты</li>
+        <li>Оборудование, работающее под давлением</li>
+        <li>Радио- и телекоммуникационное терминальное оборудование</li>
+        <li>Прогулочные лодки и суда</li>
+        <li>Игрушки</li>
+        <li>Сосуды под давлением</li>
+        <li>Оборудование, содержащее опасные вещества</li>
+      </ul>
+
+      {/* ── Наши услуги ── */}
+      <h2>Мы поможем вам с получением сертификата CE</h2>
+      <p>Для надлежащей сертификации вашей продукции по стандарту CE мы предлагаем:</p>
+      <ul>
+        <li>
+          Оценка соответствия для конкретного вида продукции в форме декларации,
+          декларации соответствия или сертификата CE.
+        </li>
+        <li>Обеспечение полного цикла регистрации.</li>
+        <li>Профессиональная консультация.</li>
+      </ul>
+
+      {/* ── Блок CTA ── */}
+      <div
+        style={{
+          background: "#f0f4ff",
+          border: "1px solid #c5d0f0",
+          borderRadius: "8px",
+          padding: "20px",
+          margin: "30px 0",
+        }}
+      >
+        <h2>Вас интересует сертификация CE?</h2>
+        <p>
+          Мы с удовольствием проконсультируем вас о том, как без проблем и
+          стресса пройти сертификацию CE.
+        </p>
+        <ul style={{ listStyle: "none", paddingLeft: 0 }}>
+          <li>✔ Мы ответим без каких-либо обязательств.</li>
+          <li>✔ Мы предоставим профессиональную консультацию.</li>
+          <li>✔ Вы не платите ни единого евро.</li>
+        </ul>
+      </div>
+
+      {/* ── Форма ── */}
+      <h2>Оставьте заявку</h2>
+      <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "14px", maxWidth: "500px" }}>
+
+        <label>
+          Меня интересует аудит/услуга:
+          <input
+            type="text"
+            name="service"
+            value={formData.service}
+            onChange={handleChange}
+            style={inputStyle}
+          />
+        </label>
+
+        <label>
+          Также просим обратить внимание на следующие дополнительные аудиты/стандарты/услуги:
+          <input
+            type="text"
+            name="additionalServices"
+            value={formData.additionalServices}
+            onChange={handleChange}
+            style={inputStyle}
+            placeholder="(необязательно)"
+          />
+        </label>
+
+        <label>
+          Ваше имя:
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+            style={inputStyle}
+          />
+        </label>
+
+        <label>
+          Рабочий адрес электронной почты:
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            style={inputStyle}
+          />
+        </label>
+
+        <label>
+          Рабочий телефон (ускоряет связь):
+          <input
+            type="tel"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            placeholder="09xx123456"
+            style={inputStyle}
+          />
+        </label>
+
+        <label>
+          Место для вашего вопроса:
+          <textarea
+            name="question"
+            value={formData.question}
+            onChange={handleChange}
+            rows={4}
+            style={{ ...inputStyle, resize: "vertical" }}
+          />
+        </label>
+
+        <button
+          type="submit"
+          style={{
+            padding: "12px 24px",
+            background: "#1a4fc4",
+            color: "#fff",
+            border: "none",
+            borderRadius: "6px",
+            fontSize: "16px",
+            cursor: "pointer",
+          }}
+        >
+          Отправить заявку
+        </button>
+      </form>
     </div>
   );
+};
+
+const inputStyle = {
+  display: "block",
+  width: "100%",
+  padding: "8px",
+  marginTop: "4px",
+  border: "1px solid #ccc",
+  borderRadius: "4px",
+  fontSize: "14px",
 };
 
 export default StepByStep;

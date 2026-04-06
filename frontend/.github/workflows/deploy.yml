@@ -1,0 +1,33 @@
+name: Deploy React to Azure Storage
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'frontend/**'   # запускать только если менялся frontend
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Install dependencies
+        working-directory: frontend    # ← папка с React
+        run: yarn install
+
+      - name: Build project
+        working-directory: frontend    # ← папка с React
+        run: yarn build
+
+      - name: Upload to Azure Storage
+        run: az storage blob upload-batch --account-name stsereginwebsiteprod --account-key ${{ secrets.AZURE_STORAGE_KEY }} --destination "\$web" --source frontend/build --overwrite
