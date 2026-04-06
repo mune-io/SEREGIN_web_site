@@ -49,13 +49,4 @@ jobs:
             --source frontend/build \
             --overwrite  
 
-      - name: Upload to Azure Storage
-        env:
-          AZURE_STORAGE_KEY: ${{ secrets.AZURE_STORAGE_KEY }}
-        run: |
-          az storage blob upload-batch \
-            --account-name stsereginwebsiteprod \
-            --account-key "$AZURE_STORAGE_KEY" \
-            --destination '$web' \
-            --source frontend/build \
-            --overwrite
+      
