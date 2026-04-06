@@ -1,5 +1,5 @@
 import  { useState, useEffect } from "react";
-import { Routes, Route, Link, useNavigate } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 
 import { generatePKCE } from "./pkce";
 
@@ -14,9 +14,7 @@ import ContactForm from "./Email";
 
 import Map    from './map/map';
 
-import EarnPage from "./pages/EarnPage";
-import InvestPage from "./pages/InvestPage";
-import CarouselSmall from "./CarouselSmall";  
+import CarouselSmall from "./CarouselSmall";
 
 const App = () => {
   const { t } = useTranslation();
@@ -103,25 +101,6 @@ const  slideDataSmall = [<img src="image1.jpg" alt="Slide 1" className="carousel
 
 
 
-const BlinkingButtons = () => {
-  const navigate = useNavigate();
-
-  const handleClick1 = () => {
-    navigate("/earn"); // Переход на /earn
-  };
-
-  const handleClick2 = () => {
-    navigate("/invest"); // Переход на /invest
-  };
-
-  return (
-    <div className="blinking-buttons-container">
-      <button className="blinking-button" onClick={handleClick1}>EARN WITH US</button>
-      <button className="blinking-button" onClick={handleClick2}>INVEST IN US</button>
-    </div>
-  );
-};
-
   return (
     <div>
          <CarouselSmall slides={slideDataSmall} />
@@ -200,12 +179,9 @@ const BlinkingButtons = () => {
 
             <Route path="/map" element={<Map />} />
 
-             <Route path="/earn" element={<EarnPage />} />
-      <Route path="/invest" element={<InvestPage />} />
-
           </Routes>
         </div>
-                 <BlinkingButtons />
+
       </div>
     </div>
   );
