@@ -1,0 +1,71 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Disallow:
+
+
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+.app-grid {
+  display: grid;
+  grid-template-columns: 200px 1fr; /* Sidebar and main content */
+  height: 100%; /* Occupy full height */
+}
+
+.sidebar {
+  background-color: #f4f4f4;
+  padding: 20px;
+  overflow-y: auto; /* Add scrollbar if content exceeds height */
+}
+
+.greeting-container {
+  margin-bottom: 20px;
+  font-size: 20px;
+  padding-bottom: 15px;
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-list li {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 10px solid #ccc;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #333;
+}
+
+.main-content {
+  padding: 20px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) { /* Tablet and smaller */
+  .app-grid {
+    grid-template-columns: 1fr; /* Stack sidebar and content vertically */
+  }
+  .sidebar {
+    padding: 10px;
+  }
+}
+
+.button-container {
+  text-align: center; /* Center the button horizontally */
+}
+
+.login-button {
+  display: inline-block; /* Makes it easier to style */
+  padding: 10px 20px;
+  background-color: #4CAF50; /* Green */
+  color: white;
+  text-decoration: none; /* Remove underline from the link */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

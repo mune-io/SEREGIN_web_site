@@ -1,0 +1,87 @@
+/* General Styles */
+body {
+    font-family: sans-serif;
+    margin: 0; /* Remove default body margins */
+    display: flex;
+    min-height: 100vh; /* Ensure content fills viewport height */
+    flex-direction: column;
+  }
+  
+  .container {
+    max-width: 1200px; /* Set maximum width for responsiveness */
+    margin: 20px auto; /* Center horizontally */
+    padding: 0 20px; /* Add padding for better readability */
+    box-sizing: border-box; /* Include padding and border in element width */
+  }
+  
+  h1, h2 {
+    text-align: center;
+  }
+  
+  table {
+    width: 100%; /* Table should take full container width */
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-sizing: border-box;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  .upload-area {
+    border: 2px dashed #007BFF;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content vertically */
+    box-sizing: border-box;
+  }
+  
+  .upload-area p {
+    margin-top: 10px;
+  }
+  
+  button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+  
+  
+  /* Responsive Styles (Media Queries) */
+  @media (max-width: 768px) { /* Tablet and smaller screens */
+    .container {
+      padding: 0 10px;
+    }
+    table {
+      font-size: 14px; /* Reduce font size for better readability */
+    }
+    .upload-area {
+      width: 100%;
+    }
+  }
+  
+  
+  @media (max-width: 480px) { /* Mobile screens */
+    .container {
+      padding: 0 5px;
+    }
+    table {
+      font-size: 12px;
+    }
+  }
+  
+  

@@ -1,0 +1,32 @@
+/* Центрирование по центру экрана */
+.blinking-buttons-container {
+  position: fixed;
+  top: 2%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  display: flex;
+  gap: 20px;
+}
+
+/* Кнопка с анимацией моргания */
+.blinking-button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #ff4081;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+.blinking-button:hover {
+  background-color: #d81b60;
+}

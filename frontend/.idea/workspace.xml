@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="af87dda7-da7f-46a7-83bb-055e5a217ecb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plates/en/cleaned_file_10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plates/en/cleaned_file_11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plates/en/cleaned_file_12.jpg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plates/en/cleaned_file_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plates/en/cleaned_file_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plates/en/cleaned_file_4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plates/en/cleaned_file_5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plates/en/cleaned_file_6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plates/en/cleaned_file_7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plates/en/cleaned_file_8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plates/en/cleaned_file_9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plates/ru/file_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plates/ru/file_10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plates/ru/file_11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plates/ru/file_12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plates/ru/file_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plates/ru/file_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plates/ru/file_4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plates/ru/file_5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plates/ru/file_6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plates/ru/file_7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plates/ru/file_8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plates/ru/file_9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DynamoDBTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/DynamoDBTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Email.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Email.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HowPeople.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/HowPeople.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PaymentPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PaymentPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PlatesEn.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PlatesPl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PlatesRu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TokenRetriever.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/TokenRetriever.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VideoUploader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/VideoUploader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/YourAccount.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/YourAccount.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/image1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/image2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/image3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/languages/translation.by.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/languages/translation.by.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/languages/translation.de.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/languages/translation.de.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/languages/translation.en.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/languages/translation.en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/languages/translation.pl.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/languages/translation.pl.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/languages/translation.ru.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/languages/translation.ru.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/languages/translation.uk.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/languages/translation.uk.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/linkYouPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/linkYouPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/registerAgain.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/registerAgain.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="3A2wCX8OScAf8QdHUuvWU7xAJXR" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "kilocode",
+    "junie.onboarding.icon.badge.shown": "true",
+    "to.speed.mode.migration.done": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-a101402ee41c-968fe969f28a-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.28238.29" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="af87dda7-da7f-46a7-83bb-055e5a217ecb" name="Changes" comment="" />
+      <created>1771803848294</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1771803848294</updated>
+    </task>
+    <servers />
+  </component>
+</project>
