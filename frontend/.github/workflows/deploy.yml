@@ -29,5 +29,9 @@ jobs:
         working-directory: frontend    # ← папка с React
         run: yarn build
 
+      # - name: Upload to Azure Storage
+      #   run: az storage blob upload-batch --account-name stsereginwebsiteprod --account-key ${{ secrets.AZURE_STORAGE_KEY }} --destination "\$web" --source frontend/build --overwrite
       - name: Upload to Azure Storage
-        run: az storage blob upload-batch --account-name stsereginwebsiteprod --account-key ${{ secrets.AZURE_STORAGE_KEY }} --destination "\$web" --source frontend/build --overwrite
+        env:
+          AZURE_STORAGE_KEY: ${{ secrets.AZURE_STORAGE_KEY }}
+        run: az storage blob upload-batch --account-name stsereginwebsiteprod --account-key "$AZURE_STORAGE_KEY" --destination '$web' --source frontend/build --overwrite
