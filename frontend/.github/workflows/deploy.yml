@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'frontend/**'   # запускать только если менялся frontend
+      - 'frontend/**'
 
 jobs:
   build-and-deploy:
@@ -22,16 +22,20 @@ jobs:
         run: corepack enable
 
       - name: Install dependencies
-        working-directory: frontend    # ← папка с React
+        working-directory: frontend
         run: yarn install
 
       - name: Build project
-        working-directory: frontend    # ← папка с React
+        working-directory: frontend
         run: yarn build
 
-      # - name: Upload to Azure Storage
-      #   run: az storage blob upload-batch --account-name stsereginwebsiteprod --account-key ${{ secrets.AZURE_STORAGE_KEY }} --destination "\$web" --source frontend/build --overwrite
       - name: Upload to Azure Storage
         env:
           AZURE_STORAGE_KEY: ${{ secrets.AZURE_STORAGE_KEY }}
-        run: az storage blob upload-batch --account-name stsereginwebsiteprod --account-key "$AZURE_STORAGE_KEY" --destination '$web' --source frontend/build --overwrite
+        run: |
+          az storage blob upload-batch \
+            --account-name stsereginwebsiteprod \
+            --account-key "$AZURE_STORAGE_KEY" \
+            --destination '$web' \
+            --source frontend/build \
+            --overwrite
