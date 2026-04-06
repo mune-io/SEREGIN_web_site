@@ -12,3 +12,5 @@ infrastructure/terraform.tfvars
 infrastructure/.terraform/
 infrastructure/*.tfstate
 infrastructure/*.tfstate.backup
+
+Document.txt

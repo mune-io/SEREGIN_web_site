@@ -1,3 +1,0 @@
-
-storage_account_name = "stsereginwebsiteprod"
-storage_web_endpoint = "stsereginwebsiteprod.z6.web.core.windows.net"
